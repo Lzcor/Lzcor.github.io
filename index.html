@@ -144,6 +144,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-记录Vue使用的坑点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/记录Vue使用的坑点/">记录Vue使用的坑点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/记录Vue使用的坑点/" class="archive-article-date">
+  	<time datetime="2019-03-12T14:15:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="槽点满满"><a href="#槽点满满" class="headerlink" title="槽点满满"></a>槽点满满</h2><h4 id="1-使用Vue的动态路由组件跳转时，更改一个组件中的body和html标签元素的属性后影响到其他组件"><a href="#1-使用Vue的动态路由组件跳转时，更改一个组件中的body和html标签元素的属性后影响到其他组件" class="headerlink" title="1.使用Vue的动态路由组件跳转时，更改一个组件中的body和html标签元素的属性后影响到其他组件~"></a>1.使用Vue的动态路由组件跳转时，更改一个组件中的body和html标签元素的属性后影响到其他组件~</h4><pre><code>原因：利用路由跳转页面时，实际是组件的切换，页面并没有跳转，里面的html和body元素是同一个，对其进行操作会对其他组件有影响，可以操作组件中根元素来设置样式！
+</code></pre><h4 id="2-使用axios的Interceptors请求拦截器（设置登录拦截token）和响应拦截器时（设置拿到响应体的统一逻辑），拿不到请求体，得到的结果是undefined"><a href="#2-使用axios的Interceptors请求拦截器（设置登录拦截token）和响应拦截器时（设置拿到响应体的统一逻辑），拿不到请求体，得到的结果是undefined" class="headerlink" title="2.使用axios的Interceptors请求拦截器（设置登录拦截token）和响应拦截器时（设置拿到响应体的统一逻辑），拿不到请求体，得到的结果是undefined"></a>2.使用axios的Interceptors请求拦截器（设置登录拦截token）和响应拦截器时（设置拿到响应体的统一逻辑），拿不到请求体，得到的结果是undefined</h4><pre><code>原因：要在请求拦截器中返回config，response，不然就在axios内部拦截了，调用axios外部方法拿不到响应体，从而导致效果无法实现
+</code></pre><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><h4 id="1-Vue导航守卫的使用"><a href="#1-Vue导航守卫的使用" class="headerlink" title="1.Vue导航守卫的使用"></a>1.Vue导航守卫的使用</h4><pre><code>导航守卫是在路由发生改变时，实现自己想要的逻辑操作
+router.beforeEach((to, from, next) =&gt; {
+// ...
+})
+to中包含即将进入的目标路由所有信息，from中包含正在离开的路由所有信息，我们可以根据to,和from中的url路径，来执行自己的逻辑，并且必须要执行next()方法，方法内可以包含url路径，表示逻辑操作之后跳转到这个路劲
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/记录Vue使用的坑点/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
