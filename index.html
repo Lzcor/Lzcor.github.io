@@ -144,6 +144,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue学习之生命周期钩子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/vue学习之生命周期钩子/">数组的常见方法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/vue学习之生命周期钩子/" class="archive-article-date">
+  	<time datetime="2019-03-13T14:06:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="fliter-方法"><a href="#fliter-方法" class="headerlink" title="fliter()方法"></a>fliter()方法</h3><p>  改方法的参数是一个回调函数，回调函数中有三个参数，value，index，arr，如果返回true表示该元素通过测试，保留该元素，否则不保留，返回值组成一个新数组<br>  去除偶数项：<br>    var arr = [1,2,3,4,5,6];<br>    var res = arr.filter((val)=&gt;{<br>        if(val % 2 ==0){<br>            return true<br>        }<br>    })<br>    console.log(res)  //[2,4,6]</p>
+<h3 id="map-方法"><a href="#map-方法" class="headerlink" title="map()方法"></a>map()方法</h3><p>  该方法的参数是一个回调函数，回调函数中有三个参数，value,index,arr，在回调函数中会将每个元素都调用一次，每次执行之后的返回值组成一个新数组,必须要返回执行操作后的每一项<br>    将元素组中的元素都翻倍<br>    var arr = [1,2,3,4,5,6]<br>    var res = arr.map((val)=&gt;{<br>       return  val * 2<br>    })<br>    console.log(res)  //[,2,4,6,8,10,12]</p>
+<h3 id="reduce-方法"><a href="#reduce-方法" class="headerlink" title="reduce()方法"></a>reduce()方法</h3><p>  该方法的参数是一个回调函数，回调函数中有四个参数，sum(外加值),start(开始位置，默认从数组的第0项开始),value,index,arr,在回调函数中，数组中的元素依次执行回调函数，一般用来求累计值运算<br>    将数组的元素求和<br>    var arr = [1,2,3,4,5]<br>    var res = arr.reduce((start,value)=&gt;{<br>        return start + value<br>    },10)<br>    console.log(res)  //25</p>
+<h3 id="every-方法"><a href="#every-方法" class="headerlink" title="every()方法"></a>every()方法</h3><p>  该方法的参数是一个回调函数，回调函数中有三个参数，value,index,arr，在回调函数中会将每个元素都调用一次，直到它找到一个元素使回调函数返回一个false，此时会改方法会立刻返回false，即用来判断数组中的元素是否都符合条件(全真)<br>   判断数组中的元素是否没有18<br>    var arr = [7,1,5,8,46,23,45,16]<br>    var res = arr.every((res)=&gt;{<br>        return res == 18<br>    })<br>    console.log(res)  // true</p>
+<h3 id="some-方法"><a href="#some-方法" class="headerlink" title="some()方法"></a>some()方法</h3><p>  该方法的参数是一个回调函数，回调函数中有三个参数，value,index,arr，在回调函数中会将每个元素都调用一次，如果它找到一个元素使回调函数返回一个true，此时会改方法会立刻返回true，即用来判断数组中的元素是否有符合条件(找真)<br>  判断数组中的元素是否有能被5整除的数<br>  var arr = [1,65,8,97,41,23,54,7,10]<br>  var res = arr.some((value)=&gt;{<br>      return value % 5 == 0<br>  })<br>  console.log(res)  //true</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/vue学习之生命周期钩子/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-记录Vue使用的坑点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
